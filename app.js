@@ -27,7 +27,7 @@ if (fs.existsSync(SESSION_FILE_PATH)) {
 
 const client = new Client({
   puppeteer: {
-     //executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
+     // executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
     handleSIGINT: false,
     args: ['--no-sandbox', '--disable-setuid-sandbox']
   },
@@ -47,13 +47,9 @@ process.on("SIGINT", async () => {
 })
 
 
-
-
-
 client.on('qr', (qr) => {
   qrcode.generate(qr, { small: true });
 });
-
 
 
 
